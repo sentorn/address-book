@@ -1,0 +1,25 @@
+.sidebar-menu__title
+    h2 Groups
+    span.ic.ic--circle-plus.js-dropdown-btn
+    .dropdown.dropdown--groups.js-dropdown
+        .dropdown__item My Favorites
+        .dropdown__item Business
+        .dropdown__item Head Office & Logistics
+        .dropdown__item International Contacts
+        .dropdown__item.dropdown__item--link.js-input-dropdown-btn
+            span.ic.ic--plus
+            span Add New Group
+.sidebar-menu__list
+    ul
+        li
+            +sidebar-menu-item('My Favorites')
+        li
+            +sidebar-menu-item('Business')
+        li
+            +sidebar-menu-item('Head Office & Logistics')
+        li
+            +sidebar-menu-item('International Contacts')
+        li
+            .dropdown.dropdown--input.js-input-dropdown
+                .input-box
+                    input(type='text' placeholder='Group Name')

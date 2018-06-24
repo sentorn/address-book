@@ -1,0 +1,47 @@
+.ab {
+  &-list {
+    padding-left: 20px;
+    padding-right: 20px;
+    &__item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 54px;
+      padding-left: 20px;
+      padding-right: 40px;
+      border: 1px solid transparent;
+      box-shadow: 0 1px 0 0 $c-border-shadow, inset 0 1px 0 0 $c-border-shadow;
+      transition: background-color $duration, border-color $duration;
+      &:last-child {
+        box-shadow: inset 0 1px 0 0 $c-border-shadow;
+      }
+      &:first-child {
+        box-shadow: 0 1px 0 0 $c-border-shadow;
+      }
+      [class*='ic--dots'] {
+        @include pos('topRight', 50%, 20px);
+        transform: translate(0, -50%);
+      }
+      [class$='triangle'] {
+        @include pos('bottomLeft', 2px, 2px);
+        opacity: 0;
+        transition: opacity $duration;
+      }
+      &.active {
+        background-color: $c-bg-checked;
+        border-color: $c-border-checked;
+        [class*='ic--dots'] {
+          span {
+            background-color: $c-dark;
+          }
+        }
+        [class$='triangle'] {
+          opacity: 1;
+        }
+        .check-item span {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.ab {
+  &-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
+    &__add-link {
+      @include font(12px, 15px, $c-link);
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      text-transform: uppercase;
+      transition: color $duration;
+      [class*='ic'] {
+        margin-right: 8px;
+      }
+      &:hover {
+        color: $c-link-hover;
+        [class*='ic'] {
+          color: $c-link-hover;
+          border-color: $c-link-hover;
+        }
+      }
+    }
+  }
+}

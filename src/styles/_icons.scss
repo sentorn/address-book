@@ -1,0 +1,106 @@
+.ic {
+  position: relative;
+  display: block;
+  &--plus {
+    width: 8px;
+    height: 8px;
+    color: $c-link;
+    transition: color $duration;
+    &:before,
+    &:after {
+      position: absolute;
+      content: '';
+      border-radius: 1px;
+      background-color: currentColor;
+    }
+    &:before {
+      @include size(2px, 100%);
+      top: 0;
+      left: 3px;
+    }
+    &:after {
+      @include size(100%, 2px);
+      top: 3px;
+      left: 0;
+    }
+  }
+  &--circle-plus {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid $c-link;
+    color: $c-link;
+    transition: border-color $duration, color $duration;
+    cursor: pointer;
+    &:before,
+    &:after {
+      position: absolute;
+      content: '';
+      border-radius: 1px;
+      background-color: currentColor;
+    }
+    &:before {
+      @include size(2px, 8px);
+      left: 5px;
+      top: 2px;
+    }
+    &:after {
+      @include size(8px, 2px);
+      left: 2px;
+      top: 5px;
+    }
+    &:hover {
+      color: $c-link-hover;
+      border-color: $c-link-hover;
+    }
+  }
+  &--dots {
+    @include size(16px, 20px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    span {
+      @include size(4px, 4px);
+      display: block;
+      background-color: $c-border;
+      border-radius: 50%;
+      transition: background-color $duration;
+      pointer-events: none;
+    }
+    &:hover {
+      span {
+        background-color: $c-dark;
+      }
+    }
+    &.active {
+      span {
+        background-color: $c-dark;
+      }
+    }
+  }
+  &--triangle {
+    @include size(10px, 10px);
+    color: $c-bg;
+    &:before {
+      @include pos('bottomLeft', 0, 0);
+      @include size(2px, 2px);
+      content: '';
+      background-color: currentColor;
+      box-shadow: 4px 0 0 0 currentColor,
+      8px 0 0 0 currentColor,
+      0 -4px 0 0 currentColor,
+      0 -8px 0 0 currentColor,
+      4px -4px 0 0 currentColor;
+    }
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  svg {
+    transition: fill $duration;
+  }
+}

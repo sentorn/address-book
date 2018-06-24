@@ -1,0 +1,20 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $c-bg;
+}
+
+input,
+button,
+select {
+  background: none;
+  outline: none;
+  border: none;
+  appearance: none;
+}

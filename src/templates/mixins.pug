@@ -1,0 +1,62 @@
+mixin link(href, name)
+    a(href= href)&attributes(attributes)= name
+
+mixin person-address(fullName, email, photoSource, ns)
+    .ab-list__item.js-person-info
+        .check-item
+            label
+                input(type='check-box')
+                span
+        .person-box
+            if photoSource
+                .person-avatar
+                    img(src= photoSource draggable='false' alt= fullName)
+            else
+                .person-avatar&attributes(attributes)= ns
+            h3= fullName
+        span.person-email= email
+        .ic.ic--dots.js-dropdown-btn
+            span
+            span
+            span
+        .dropdown.dropdown--edit.js-dropdown
+            .dropdown__item
+                .icon
+                    svg(width='16' height='16')
+                        use(xlink:href='#edit')
+                span Edit
+            .dropdown__item
+                .icon
+                    svg(width='16' height='16')
+                        use(xlink:href='#share-1')
+                span Share
+            .dropdown__item
+                .icon
+                    svg(width='12' height='12')
+                        use(xlink:href='#close')
+                span Delete from Group
+            .dropdown__item
+                .icon
+                    svg(width='16' height='16')
+                        use(xlink:href='#trash')
+                span Delete
+        .ic.ic--triangle
+
+mixin sidebar-menu-item(name)
+    .sidebar-menu__item
+        span= name
+        .ic.ic--dots.js-dropdown-btn
+            span
+            span
+            span
+        .dropdown.dropdown--edit.js-dropdown
+            .dropdown__item
+                .icon
+                    svg(width='16' height='16')
+                        use(xlink:href='#pencil-edit-button')
+                span Rename
+            .dropdown__item
+                .icon
+                    svg(width='16' height='16')
+                        use(xlink:href='#trash')
+                span Delete Group

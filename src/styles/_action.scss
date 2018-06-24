@@ -1,0 +1,13 @@
+.ab {
+  &-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    background-color: $c-bg-light;
+    &__result {
+      line-height: 16px;
+      color: $c-text;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.btn {
+  @include font(12px, 32px, $c-light);
+  height: 32px;
+  padding-left: 38px;
+  padding-right: 38px;
+  background-color: $c-button;
+  border: 1px solid $c-button-border;
+  font-weight: 700;
+  border-radius: $br;
+  user-select: none;
+  transition: background-color $duration;
+  cursor: pointer;
+  &:hover {
+    background-color: $c-button-border;
+  }
+}

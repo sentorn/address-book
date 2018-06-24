@@ -1,0 +1,40 @@
+.popup-ab {
+  position: relative;
+  display: flex;
+  width: 800px;
+  margin: 50px auto;
+  background-color: $c-light;
+  border-radius: $br;
+  box-shadow: 0 2px 13px 0 $c-shadow-lg;
+  font-size: 13px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  & > .icon {
+    @include pos('bottomRight', 100%, 0);
+    margin-bottom: 10px;
+    cursor: pointer;
+    svg {
+      fill: $c-input-border;
+    }
+    &:hover {
+      svg {
+        fill: $c-light;
+      }
+    }
+  }
+  &__sidebar,
+  &__content {
+    flex: 1 1 auto;
+  }
+  &__sidebar {
+    max-width: 230px;
+    background-color: $c-bg-gray;
+    padding: 20px 10px;
+  }
+  a {
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+}

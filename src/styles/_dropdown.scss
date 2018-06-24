@@ -1,0 +1,107 @@
+.dropdown {
+  position: absolute;
+  z-index: 1;
+  min-width: 180px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: $c-light;
+  border-radius: $br;
+  border: 1px solid $c-input-border;
+  box-shadow: 0 2px 4px 0 $c-shadow-sm;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  line-height: 15px;
+  opacity: 0;
+  transform-origin: top center;
+  transform: rotateX(-90deg) translateZ(0);
+  transition: opacity 0.5s, transform 0.5s;
+  &.show {
+    opacity: 1;
+    transform: rotateX(0deg) translateZ(0);
+  }
+  &__item {
+    color: $c-dark;
+  }
+  &--groups {
+    top: calc(100% + 5px);
+    left: 0;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    .dropdown__item {
+      margin-bottom: 4px;
+      padding-left: 6px;
+      padding-right: 6px;
+      line-height: 32px;
+      &--link {
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        color: $c-link;
+        cursor: pointer;
+        transition: color $duration;
+        &:hover {
+          color: $c-link-hover;
+          [class$='plus'] {
+            color: $c-link-hover;
+          }
+        }
+        [class$='plus'] {
+          margin-right: 12px;
+        }
+        span {
+          pointer-events: none;
+        }
+      }
+    }
+  }
+  &--edit {
+    top: calc(50% + 10px);
+    right: 20px;
+    padding: 5px;
+    .dropdown__item {
+      display: flex;
+      align-items: center;
+      border-radius: $br;
+      padding: 8px 5px;
+      transition: background-color $duration;
+      font-weight: 500;
+      cursor: pointer;
+      .icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 10px;
+      }
+      svg {
+        fill: $c-dark;
+      }
+      &:hover {
+        background-color: $c-bg-active;
+      }
+    }
+  }
+  &--input {
+    top: 5px;
+    left: -5px;
+    width: 220px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color: $c-bg-drop-down;
+    box-shadow: none;
+    transform-origin: left center;
+    transform: rotateY(-90deg) translate3d(-10px, 0, 0);
+    &.show {
+      transform: rotateY(0) translate3d(0, 0, 0);
+    }
+    .input-box {
+      width: auto;
+    }
+    input {
+      @include input-placeholder {
+        color: $c-dark;
+      }
+      height: 24px;
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+  }
+}
